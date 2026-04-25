@@ -1,8 +1,21 @@
 /* @import url('https://fonts.googleapis.com/css?family=Figtree'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("scrollbar.css");
 @import url("animated.css"); /* animasi */
 
+:root {
+  --h1: clamp(32px, 5vw, 56px);
+  --h2: clamp(24px, 3vw, 40px);
+  --h3: clamp(20px, 2vw, 28px);
+  --body: clamp(14px, 1.2vw, 16px);
+}
+h1 { font-size: var(--h1); }
+h2 { font-size: var(--h2); }
+p  { font-size: var(--body); }
+section {
+  padding: clamp(60px, 10vw, 120px) 20px;
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -12,9 +25,10 @@ body {
   line-height: inherit;
   line-height: 1.6em;
   font-weight: 400;
-  text-decoration: none;
+  text-decoration: none; 
+  font-family: 'Inter', sans-serif;
 }
-
+   
 ::-webkit-scrollbar {
   display: none; 
 }
@@ -1547,7 +1561,7 @@ li {
 .live-awal {
   width: 100%;
   height: 64px;
-  background-color: #1c1e32;
+  background: linear-gradient(180deg, #062f2f 100%);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1556,8 +1570,24 @@ li {
   left: 0;
   bottom: 0;
   z-index: 4;
-}
+  font-family: 'Montserrat', sans-serif;
 
+}
+.live-awal1{
+  width: 100%;
+  height: 64px;
+background: linear-gradient(180deg, #0d5c52 100%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+  font-family: 'Montserrat', sans-serif;
+
+}
 .live-wrapper {
   display: flex;
   position: relative;
@@ -1582,14 +1612,31 @@ li {
   padding: 0 20px;
   flex-shrink: 0;
 }
+.live-awal1 .live{
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
 
 .live-awal img {
   width: 48px;
   height: 32px;
   margin-right: 10px;
 }
+.live-awal1 img{
+  width: 48px;
+  height: 32px;
+  margin-right: 10px;
+}
 
 .live-awal span {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+.live-awal1 span{
   color: white;
   font-size: 16px;
   font-weight: 600;
@@ -1670,6 +1717,7 @@ li {
 }
 
 /* BAGIAN 8 */
+/* ================= HERO SECTION ================= */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -1679,135 +1727,113 @@ li {
   justify-content: center;
   text-align: center;
   background: linear-gradient(180deg, #062f2f 0%, #0d5c52 100%);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 5;
-  max-width: 800px;
   padding: 0 20px;
 }
 
-.hero-content h1 {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 15px;
-  
- background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 650px;
 }
 
+/* TITLE */
+.hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+
+  background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SUB TITLE */
 .hero-content h1 span {
   display: block;
- background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
+/* DESC (FIX: MAX 2 BARIS) */
 .hero-content p {
-  font-size: 16px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
   color: #ffffff;
-  margin-bottom: 25px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  max-width: 480px;
 }
 
+/* BUTTON */
 .btn-hero {
   padding: 12px 28px;
   background: #f7d58a;
   border-radius: 30px;
   color: #000;
   display: inline-block;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
+.btn-hero:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ================= TREE (PAKAI PNG!) ================= */
 .hero-tree {
   position: absolute;
-  bottom: -130px; 
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
 }
 
 .hero-tree img {
-  width: 460px;
+ width: 420px;
   display: block;
+  animation: floatTree 5s ease-in-out infinite;
 }
 
+/* ================= CLOUD ================= */
 .cloud {
   position: absolute;
-  bottom: 0;
+  bottom:-10px;
   z-index: 2;
   pointer-events: none;
 }
 
 .cloud img {
-  width: 420px;
-  max-width: none;
-  opacity: 0.95;
+  width: 380px;
+  opacity: 0.9;
 }
-
 
 .cloud-left {
-  left: -40px; 
-  transform: translateY(20px);
+  left: -40px;
 }
-
 
 .cloud-right {
-  right: -40px; 
-  transform: translateY(20px);
+  right: -40px;
 }
 
+/* ================= STAR ================= */
 .star {
   position: absolute;
   opacity: 0.8;
 }
 
-.stars-left .s1 {
-  bottom: 150px;
-  left: 10%;
-}
-.stars-left .s2 {
-  bottom: 250px;
-  left: 5%;
-  width: 40px;
-}
-.stars-left .s3 {
-  bottom: 100px;
-  left: 2%;
-  width: 20px;
-}
-.stars-left .s4 {
-  bottom: 300px;
-  left: 15%;
-}
+.stars-left .s1 { bottom: 140px; left: 10%; }
+.stars-left .s2 { bottom: 240px; left: 5%; width: 35px; }
+.stars-left .s3 { bottom: 90px; left: 2%; width: 18px; }
 
-.stars-right .s1 {
-  bottom: 160px;
-  right: 10%;
-}
-.stars-right .s2 {
-  bottom: 260px;
-  right: 5%;
-  width: 40px;
-}
-.stars-right .s3 {
-  bottom: 110px;
-  right: 2%;
-  width: 20px;
-}
-.stars-right .s4 {
-  bottom: 320px;
-  right: 15%;
-}
+.stars-right .s1 { bottom: 150px; right: 10%; }
+.stars-right .s2 { bottom: 250px; right: 5%; width: 35px; }
+.stars-right .s3 { bottom: 100px; right: 2%; width: 18px; }
 
-.hero-tree img {
-  animation: floatTree 5s ease-in-out infinite;
-}
-
+/* ================= ANIMATION ================= */
 @keyframes floatTree {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -1815,24 +1841,43 @@ li {
   }
 }
 
-@keyframes floatRight {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(40px, -20px);
-  }
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
 
-@keyframes floatLeft {
-  from {
-    transform: translate(0, 0);
+  .hero-section {
+    height: auto;
+    padding: 120px 20px 200px;
   }
-  to {
-    transform: translate(-40px, 20px);
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .hero-tree img {
+    width: 260px;
+    transform: translateY(30px);
+  }
+
+  .cloud img {
+    width: 240px;
+  }
+
+  .cloud-left {
+    left: -60px;
+  }
+
+  .cloud-right {
+    right: -60px;
   }
 }
 /* BAGIAN 9 */
+/* BAGIAN 9 - TIMELINE FINAL */
+
 .timeline-section {
   position: relative;
   padding: 140px 100px;
@@ -1841,52 +1886,31 @@ li {
   overflow: hidden;
 }
 
-.timeline-bg {
-  position: absolute;
-  width: 900px;
-  height: 900px;
-  /* background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent); */
-  top: -300px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.star {
-  position: absolute;
-  opacity: 0.6;
-}
-
-.s1 {
-  top: 25%;
-  left: 8%;
-  width: 40px;
-}
-.s2 {
-  bottom: 25%;
-  right: 10%;
-  width: 28px;
-}
-.s3 {
-  top: 10%;
-  right: 20%;
-  width: 35px;
-}
-
+/* ================= NAVIGATION ================= */
 
 .timeline-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .timeline-item {
-  font-size: 14px;
+  font-size: 16px;
   color: #f3cfc2;
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: 999px;
   cursor: pointer;
   transition: 0.3s;
+  border: 1px solid transparent;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-item:hover {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.3);
 }
 
 .timeline-item.active {
@@ -1897,11 +1921,12 @@ li {
 
 .line {
   flex: 1;
-  max-width: 120px;
+  max-width: 100px;
   height: 2px;
   background: linear-gradient(to right, #f3cfc2, #e7bfa5);
 }
 
+/* ================= CONTENT ================= */
 
 .timeline-wrapper {
   position: relative;
@@ -1910,13 +1935,13 @@ li {
   justify-content: center;
 }
 
-
 .timeline-content {
   width: 100%;
   max-width: 850px;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
+/* ================= SLIDE ================= */
 
 .slide {
   display: none;
@@ -1929,54 +1954,43 @@ li {
   display: block;
 }
 
-.slide .logo-himtika {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
-.slide .fire {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
-.slide .org {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
+/* header */
 .slide-header {
   display: flex;
-  align-items: center; 
-  justify-content: flex-start; 
+  align-items: center;
   gap: 16px;
   margin-bottom: 20px;
 }
 
-
 .slide-header img {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  flex-shrink: 0;
 }
 
-
+/* title */
 .slide h1 {
   font-size: 56px;
   line-height: 1.2;
   margin: 0;
- background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+
+  background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* desc */
 .slide p {
   max-width: 650px;
+  font-family: 'Inter', sans-serif;
   margin-top: 20px;
   line-height: 1.8;
   color: #dcdcdc;
-  text-align: left;
+  font-size: 16px;
 }
+
+/* ================= YEAR BACKGROUND (JANGAN DIUBAH POSISI) ================= */
 
 .slide::after {
   content: attr(data-year);
@@ -1988,6 +2002,8 @@ li {
   color: rgba(255, 255, 255, 0.04);
   pointer-events: none;
 }
+
+/* ================= ARROW (TETAP STYLE LAMA) ================= */
 
 .nav-arrow {
   position: absolute;
@@ -2016,6 +2032,8 @@ li {
   right: -80px;
 }
 
+/* ================= ANIMATION ================= */
+
 @keyframes fade {
   from {
     opacity: 0;
@@ -2024,6 +2042,107 @@ li {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablet */
+@media (max-width: 992px) {
+  .timeline-section {
+    padding: 100px 40px;
+  }
+
+  .slide h1 {
+    font-size: 42px;
+  }
+
+  .slide::after {
+    font-size: 120px;
+  }
+
+  .nav-arrow.left {
+    left: -40px;
+  }
+
+  .nav-arrow.right {
+    right: -40px;
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .timeline-section {
+    padding: 80px 20px;
+  }
+
+  /* WRAPPER SCROLL */
+  .timeline-nav-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .timeline-nav-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .timeline-nav-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+  }
+
+  /* NAV JADI KE KANAN */
+  .timeline-nav {
+    display: flex;
+    flex-direction: row; /* ⬅️ INI KUNCI UTAMA */
+    gap: 15px;
+    width: max-content;
+    padding: 10px 10px;
+  }
+
+  /* ITEM */
+  .timeline-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  /* GARIS */
+  .line {
+    width: 50px;
+    height: 2px;
+    flex-shrink: 0;
+  }
+
+  /* CONTENT */
+  .slide h1 {
+    font-size: 32px;
+  }
+
+  .slide p {
+    font-size: 14px;
+  }
+
+  /* YEAR BESAR */
+  .slide::after {
+    font-size: 80px;
+    top: 5%;
+  }
+
+  /* ARROW */
+  .nav-arrow {
+    top: 100%;
+    transform: translateY(20px);
+  }
+
+  .nav-arrow.left {
+    left: 30%;
+  }
+
+  .nav-arrow.right {
+    right: 30%;
   }
 }
 
@@ -2092,18 +2211,21 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     -webkit-text-fill-color: transparent;
 }
 .kabinet-header h1 {
-  font-size: 48px;
-  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 56px; /* lebih gede & konsisten */
+  font-weight: 700;
+  line-height: 1.2;
   margin-bottom: 20px;
- background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .kabinet-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* dari 14 → 16 biar kebaca */
+  line-height: 1.6;
   color: #dcdcdc;
-  line-height: 1.7;
-  font-size: 14px;
 }
 
 
@@ -2126,6 +2248,17 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
    background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.kabinet-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px; /* biar keliatan kayak di design */
+  font-weight: 700;
+  line-height: 1.3; /* INI KUNCI biar gak nempel */
+  letter-spacing: 0.5px; /* biar agak lega */
+
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: white;
 }
 .arrow-icon {
     position: absolute;
@@ -2202,62 +2335,75 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     text-align: center;
     overflow: hidden;
     color: white;
-
-  background: linear-gradient(180deg, #062f2f 100%, #0d5c52 10%);
+    background: linear-gradient(180deg, #062f2f 100%, #0d5c52 10%);
 }
 
+/* glow background */
 .selaras-section::before {
     content: "";
     position: absolute;
     width: 800px;
     height: 800px;
-    /* background: radial-gradient(circle, rgba(255,255,255,0.08), transparent); */
     top: -200px;
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
 }
 
+/* ⭐ BINTANG */
 .star {
     position: absolute;
     opacity: 0.9;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.s1 { top: 20%; left: 10%; width: 40px; }
-.s2 { top: 35%; right: 15%; width: 30px; }
-.s3 { top: 55%; left: 20%; width: 25px; }
-.s4 { top: 65%; right: 25%; width: 35px; }
+.s1 { top: 15%; left: 5%; width: 35px; }
+.s2 { top: 30%; right: 8%; width: 28px; }
+.s3 { top: 55%; left: 10%; width: 22px; }
+.s4 { top: 65%; right: 15%; width: 30px; }
 
+/* CONTENT */
 .selaras-content {
     position: relative;
     z-index: 2;
 }
 
 .selaras-content h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 48px;
+    font-weight: 700;
     line-height: 1.3;
     margin-bottom: 10px;
 
- background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
+    background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-
 .periode {
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #e7c873;
     margin-bottom: 40px;
 }
 
+/* 🔥 LOGO FIX TOTAL */
+.logo-kabinet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .logo-kabinet img {
-    width: 160px;
+    width: 280px;
+    max-width: 80%;
     height: auto;
-    margin: 20px auto;
     display: block;
 }
 
-
+/* DESKRIPSI */
 .desc-box {
     margin: 30px auto;
     max-width: 650px;
@@ -2272,29 +2418,30 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
 }
 
 .desc-box p {
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     line-height: 1.6;
     color: #eaeaea;
 }
 
-
+/* 🌍 BUMI */
 .earth {
     position: absolute;
-    bottom: -180px; 
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: -120px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     z-index: 0;
+    pointer-events: none;
 }
 
 .earth img {
-    width: 120vw; 
-    max-width: none; 
-    transform: translateX(-50%) scale(1.6);
-    transform-origin: bottom center;
-    position: relative;
-    left: 50%;
+    width: 1400px;
+    display: block;
 }
 
+/* RUNNING TEXT */
 .selaras-loop {
     background: #081f1c;
     padding: 10px 0;
@@ -2312,24 +2459,60 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     font-size: 14px;
 }
 
+/* ===================== */
+/* 📱 TABLET */
+/* ===================== */
+@media (max-width: 1024px) {
+
+    .logo-kabinet img {
+        width: 200px;
+    }
+
+    .earth img {
+        width: 1100px;
+    }
+}
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
 @media (max-width: 768px) {
+
+    .selaras-section {
+        padding: 80px 20px 0;
+    }
 
     .selaras-content h1 {
         font-size: 32px;
-         background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     }
 
     .logo-kabinet img {
-        width: 120px;
+        width: 220px;
     }
 
     .desc-box {
         padding: 15px;
     }
-}
 
+    /* bintang mobile */
+    .star {
+        opacity: 0.6;
+    }
+
+    .s1 { top: 10%; left: 5%; width: 25px; }
+    .s2 { top: 25%; right: 5%; width: 20px; }
+    .s3 { top: 50%; left: 8%; width: 18px; }
+    .s4 { top: 60%; right: 10%; width: 22px; }
+
+    /* bumi biar gak ilang */
+    .earth {
+        bottom: -60px;
+    }
+
+    .earth img {
+        width: 900px;
+    }
+}
 /* BAGIAN 12 */
 .filosofi-section {
     position: relative;
@@ -2462,7 +2645,6 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
         font-size: 34px;
     }
 }
-
 /* BAGIAN 13 */
 
 .sinergi-section {
@@ -2480,6 +2662,7 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     gap: 60px;
 }
 
+/* TEXT */
 .sinergi-text {
     max-width: 600px;
 }
@@ -2489,7 +2672,7 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     line-height: 1.2;
     margin-bottom: 20px;
 
- background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
+    background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -2504,18 +2687,22 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     color: #dcdcdc;
 }
 
+/* 🔥 IMAGE (FIX LOGO HATI) */
 .sinergi-image {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .sinergi-image img {
-    width: 100%;
-    max-width: 420px;
+    width: 70%;        /* 🔥 diperkecil */
+    max-width: 320px;  /* 🔥 batas maksimal */
+    height: auto;
     object-fit: contain;
 }
 
+/* ⭐ BINTANG */
 .star {
     position: absolute;
     opacity: 0.7;
@@ -2539,7 +2726,15 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
     width: 28px;
 }
 
+/* ===================== */
+/* 📱 TABLET */
+/* ===================== */
 @media (max-width: 992px) {
+
+    .sinergi-section {
+        padding: 100px 40px;
+    }
+
     .sinergi-container {
         flex-direction: column;
         text-align: center;
@@ -2549,15 +2744,43 @@ background: linear-gradient(180deg, #0d5c52, #062f2f);
         max-width: 100%;
     }
 
+    .sinergi-text h1 {
+        font-size: 36px;
+    }
+
     .sinergi-image img {
-        max-width: 300px;
+        width: 240px; /* 🔥 ukuran pas tablet */
         margin-top: 30px;
+    }
+}
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 600px) {
+
+    .sinergi-section {
+        padding: 80px 20px;
     }
 
     .sinergi-text h1 {
-        font-size: 36px;
-         background: linear-gradient(90deg, #FFB8CF 0%, #FFED9E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+        font-size: 30px;
     }
+
+    .sinergi-text p {
+        font-size: 14px;
+    }
+
+    .sinergi-image img {
+        width: 200px; /* 🔥 lebih kecil lagi di HP */
+    }
+
+    /* bintang biar gak ganggu */
+    .star {
+        opacity: 0.5;
+    }
+
+    .s1 { top: 10%; left: 60%; width: 20px; }
+    .s2 { top: 25%; right: 5%; width: 18px; }
+    .s3 { bottom: 15%; right: 10%; width: 20px; }
 }
