@@ -2237,7 +2237,7 @@ li {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
-    background: linear-gradient(90deg, #ffb8cf 0%, #ffed9e 100%);
+  background: linear-gradient(90deg, #ffb8cf 0%, #ffed9e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2482,7 +2482,75 @@ li {
   max-width: none;
   display: block;
 }
+/* ===================== */
+/*  TABLET */
+/* ===================== */
+@media (max-width: 1024px) {
+  .logo-kabinet img {
+    width: 200px;
+  }
 
+  .earth img {
+    width: 1100px;
+  }
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+  .selaras-section {
+    padding: 80px 20px 0;
+  }
+
+  .selaras-content h1 {
+    font-size: 32px;
+  }
+
+  .logo-kabinet img {
+    width: 220px;
+  }
+
+  .desc-box {
+    padding: 15px;
+  }
+
+  /* bintang mobile */
+  .star {
+    opacity: 0.6;
+  }
+
+  .s1 {
+    top: 10%;
+    left: 5%;
+    width: 25px;
+  }
+  .s2 {
+    top: 25%;
+    right: 5%;
+    width: 20px;
+  }
+  .s3 {
+    top: 50%;
+    left: 8%;
+    width: 18px;
+  }
+  .s4 {
+    top: 60%;
+    right: 10%;
+    width: 22px;
+  }
+
+  /* bumi biar gak ilang */
+  .earth {
+    bottom: -124px;
+  }
+
+  .earth img {
+    width: 2000px;
+    height: 1200px;
+  }
+}
 
 /* RUNNING TEXT */
 .selaras-loop {
