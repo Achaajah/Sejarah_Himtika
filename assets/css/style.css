@@ -2468,7 +2468,7 @@ li {
 /* 🌍 BUMI */
 .earth {
   position: absolute;
-  bottom: -5px;
+  bottom: -30px;
   left: 0;
   width: 100%;
   display: flex;
