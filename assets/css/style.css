@@ -2547,8 +2547,8 @@ li {
   }
 
   .earth img {
-    width: 2000px;
-    height: 1200px;
+    width: 130vw;   /* agak keluar biar keliatan "gede" kayak figma */
+    max-width: none;
   }
 }
 
