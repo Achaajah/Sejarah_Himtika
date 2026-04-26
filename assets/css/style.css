@@ -2324,8 +2324,8 @@ li {
 
 /* LOGO */
 .kabinet-logo {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   margin: 30px auto 15px auto;
   display: block;
