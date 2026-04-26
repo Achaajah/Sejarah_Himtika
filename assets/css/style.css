@@ -2479,8 +2479,10 @@ li {
 
 .earth img {
   width: 1400px;
+  max-width: none;
   display: block;
 }
+
 
 /* RUNNING TEXT */
 .selaras-loop {
