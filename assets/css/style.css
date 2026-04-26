@@ -2356,7 +2356,7 @@ li {
   position: relative;
   padding: 120px 20px 0;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
   color: white;
   background: linear-gradient(180deg, #062f2f 100%, #0d5c52 10%);
 }
@@ -2491,7 +2491,7 @@ li {
   }
 
   .earth img {
-    width: 1100px;
+    width: 110vw;
   }
 }
 
@@ -2542,13 +2542,20 @@ li {
   }
 
   /* bumi biar gak ilang */
+
   .earth {
-    bottom: -124px;
+    position: absolute;
+    bottom: -40px; /* ⬅️ atur ini, bukan width */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
   }
 
   .earth img {
-    width: 130vw;   /* agak keluar biar keliatan "gede" kayak figma */
-    max-width: none;
+    width: 200%;
+    height: 1000px;
+    object-fit: cover;
+    display: block;
   }
 }
 
