@@ -2437,7 +2437,11 @@ li {
   width: 100%;
 }
 
+
+
 .logo-kabinet img {
+  transform: translateX(40px); /* geser dikit ke kanan */
+  
   width: 280px;
   max-width: 80%;
   height: auto;
@@ -2488,6 +2492,7 @@ li {
 @media (max-width: 1024px) {
   .logo-kabinet img {
     width: 200px;
+    transform: translateX(25px); /* lebih kecil gesernya */
   }
 
   .earth img {
@@ -2509,6 +2514,7 @@ li {
 
   .logo-kabinet img {
     width: 220px;
+    transform: translateX(10px); /* jangan terlalu ke kanan di HP */
   }
 
   .desc-box {
