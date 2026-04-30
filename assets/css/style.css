@@ -1590,40 +1590,22 @@ li {
   font-family: "Montserrat", sans-serif; /* tetap */
 }
 
-.live-awal1 {
-  width: 100%;
-  height: 64px;
-  background: linear-gradient(180deg, #0d5c52 100%);
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  left: 0;
-  bottom: 0;
-  z-index: 4;
-  font-family: "Montserrat", sans-serif; /* tetap */
-}
-
-
 .live-wrapper {
   display: flex;
-  position: relative;
-  animation: tickerMove 10s linear infinite;
-  animation-fill-mode: forwards;
+  width: max-content;        
+  will-change: transform;    
+  animation: tickerMove 20s linear infinite; 
 }
-
 @keyframes tickerMove {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0,0,0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%,0,0);
   }
 }
 
-.live-awal .live,
-.live-awal1 .live 
+.live-awal .live
 {
 	min-width: auto;
 	display: flex;
@@ -1632,20 +1614,18 @@ li {
 	flex-shrink: 0;
 }
 
-.live-awal img,
-.live-awal1 img
+.live-awal img
 {
   width: 48px;
   height: 32px;
   margin-right: 10px;
 }
 
-.live-awal span,
-.live-awal1 span {
+.live-awal span{
   color: white;
   font-size: 16px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif; /* tambahin biar konsisten */
+  font-family: "Montserrat", sans-serif; 
 }
 
 .live-awal:hover .live-wrapper {
@@ -1674,21 +1654,6 @@ li {
   font-family: "Montserrat", sans-serif; /* tetap */
 }
 
-.live-wrapper2 {
-  display: flex;
-  position: relative;
-  animation: tickerMove2 10s linear infinite;
-  animation-fill-mode: forwards;
-}
-
-@keyframes tickerMove2 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 .live-awal2 .live2 {
   min-width: auto;
@@ -1711,8 +1676,8 @@ li {
   font-family: "Montserrat", sans-serif; /* biar teksnya lebih tegas */
 }
 
-.live-awal:hover .live-wrapper {
-  animation-play-state: paused;
+.live-awal2:hover .live-wrapper {
+  animation-play-state:paused ;
   cursor: grab;
 }
 
@@ -1833,6 +1798,8 @@ li {
 .star {
   position: absolute;
   opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .stars-left .s1 {
@@ -2385,7 +2352,7 @@ li {
 .star {
   position: absolute;
   opacity: 0.9;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -2604,9 +2571,8 @@ li {
 /* ⭐ BINTANG (FIX: blur + lebih soft) */
 .star {
   position: absolute;
-  opacity: 0.3; /* lebih redup */
-  filter: blur(2px); /* biar gak ganggu */
-  z-index: 0; /* di belakang teks */
+  opacity: 0.3;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -2631,7 +2597,7 @@ li {
   text-align: center;
   margin-bottom: 80px;
   position: relative;
-  z-index: 2; /* pastikan di atas bintang */
+  z-index: 0; /* pastikan di atas bintang */
 }
 
 /* 🔥 HEADING → Montserrat */
@@ -2818,7 +2784,7 @@ li {
 .star {
   position: absolute;
   opacity: 0.25; /* lebih soft */
-  filter: blur(2px); /* biar gak ganggu */
+  /* filter: blur(2px); biar gak ganggu */
   z-index: 0;
   pointer-events: none;
 }
@@ -2891,7 +2857,7 @@ li {
   /* bintang makin subtle */
   .star {
     opacity: 0.2;
-    filter: blur(3px);
+    /* filter: blur(3px); */
   }
 
   .s1 {

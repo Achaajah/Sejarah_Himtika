@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // LIVE KABINET 2
 document.addEventListener("DOMContentLoaded", function () {
-  const wrappers = document.querySelectorAll(".live-wrapper, .live-wrapper2");
+  const wrappers = document.querySelectorAll(".live-wrapper");
 
   wrappers.forEach(wrapper => {
     // ambil isi awal
