@@ -331,7 +331,7 @@ li {
     align-content: center;
     line-height: 45px;
     font-size: 16px;
-    font-family: "Figtree";
+    font-family: "Inter", sans-serif;
 }
 
 .live-news .marquee span a {
@@ -527,7 +527,7 @@ li {
 	line-height:24px;
 	font-weight:500;
 	font-size:15px;
-	font-family: "Figtree";
+	font-family: "Inter", sans-serif;
 	text-decoration: none;
 	text-transform:capitalize;
 	color:#252525;
@@ -556,7 +556,7 @@ li {
 }
 
 .main-menu .navigation > li > ul > li.dropdown > a:after{
-	font-family: "Figtree";
+	font-family: "Inter", sans-serif;
 	content: "\f105";
 	position:absolute;
 	right:20px;
@@ -599,7 +599,7 @@ li {
 	line-height:24px;
 	font-weight:500;
 	font-size:15px;
-	font-family: "Figtree";
+	font-family: "Inter", sans-serif;
 	text-transform:capitalize;
 	color:#252525;
 	text-align: left;
@@ -819,7 +819,7 @@ li {
 	padding: 10px 25px;
 	font-size: 15px;
 	font-weight: 500;
-	font-family: "Figtree";
+	font-family: "Inter", sans-serif;
 	text-decoration: none;
 	color: #ffffff;
 	text-transform: uppercase;
@@ -832,7 +832,7 @@ li {
 
 .mobile-menu .navigation li ul li > a{
 	font-size: 16px;
-	font-family: "Figtree";
+	font-family: "Inter", sans-serif;
 	margin-left: 20px;
 	text-transform: capitalize;
 }
@@ -1016,7 +1016,7 @@ li {
     border: #353767;
     background-color: #353767;
     padding: 0.6em 1em;
-    font-family: "Figtree";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-size: clamp(1rem, 2vw, 1.5rem);
     cursor: pointer;
@@ -1050,7 +1050,7 @@ li {
 
 .frame .text-wrapper {
     position: relative;
-    font-family: "Figtree", Helvetica;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     color: #ffffff;
     font-size: clamp(1rem, 2vw, 1.28rem);
@@ -1153,7 +1153,7 @@ li {
   
 .event-yang-diadakan h1 {
     position: relative;
-    font-family: "Figtree", Helvetica;
+    font-family: "Inter", sans-serif;
     font-size: clamp(2.56rem, 2vw, 2.56rem);
     font-weight: 500;
     font-style: normal;
@@ -1234,7 +1234,7 @@ li {
     border: #353767;
     background-color: #353767;
     padding: 0.6em 1em;
-    font-family: "Figtree";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-size: clamp(1rem, 2vw, 1.5rem);
     cursor: pointer;
@@ -1926,14 +1926,14 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px; /* 🔥 biar ga loncat */
+  min-height: 400px;
 }
 
 .timeline-content {
   width: 100%;
   max-width: 850px;
   padding: 40px 0;
-  text-align: center; /* 🔥 center semua */
+  text-align: left; /* 🔥 FIX */
 }
 
 /* ================= SLIDE ================= */
@@ -1941,8 +1941,8 @@ li {
 .slide {
   display: none;
   position: relative;
-  text-align: center; /* 🔥 ubah dari left */
-  min-height: 320px; /* 🔥 tinggi stabil */
+  text-align: left; /* 🔥 FIX */
+  min-height: 320px;
   animation: fade 0.5s ease;
 }
 
@@ -1954,7 +1954,7 @@ li {
 .slide-header {
   display: flex;
   align-items: center;
-  justify-content: center; /* 🔥 center */
+  justify-content: flex-start; /* 🔥 FIX */
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -1971,6 +1971,7 @@ li {
   line-height: 1.2;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  text-align: left; /* 🔥 FIX */
 
   background: linear-gradient(90deg, #ffb8cf 0%, #ffed9e 100%);
   -webkit-background-clip: text;
@@ -1981,11 +1982,11 @@ li {
 .slide p {
   max-width: 650px;
   font-family: "Inter", sans-serif;
-  margin: 20px auto 0 auto; /* 🔥 center */
+  margin: 20px 0 0 0; /* 🔥 FIX (hapus auto) */
   line-height: 1.8;
   color: #dcdcdc;
   font-size: 16px;
-  text-align: center;
+  text-align: left; /* 🔥 FIX */
 }
 
 /* ================= YEAR BACKGROUND ================= */
@@ -2000,6 +2001,41 @@ li {
   color: rgba(255, 255, 255, 0.04);
   pointer-events: none;
   font-family: "Montserrat", sans-serif;
+}
+
+/* slide pertama tetap center */
+.slide[data-year=""] {
+  text-align: center;
+}
+
+/* h1 jadi patokan */
+.slide[data-year=""] h1 {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+/* bintang kiri (dekat "Perjalanan") */
+.slide[data-year=""] .bintangper {
+  position: absolute;
+  left: -50px;
+  top: 10px;
+  width: 40px;
+}
+
+/* bintang kanan (dekat "HIMTIKA") */
+.slide[data-year=""] .bintangkanan {
+  position: absolute;
+  right: -50px;
+  bottom: 5px;
+  width: 40px;
+}
+
+/* paragraf tetap center */
+.slide[data-year=""] p {
+  margin: 20px auto 0 auto;
+  text-align: center;
 }
 
 /* ================= ARROW ================= */
@@ -2224,13 +2260,15 @@ li {
 .kabinet-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 30px;
+
+  padding: 0 24px; /* 🔥 ini yang bikin kiri kanan sama */
 }
 
 /* CARD */
 .kabinet-card {
   position: relative;
-  padding: 25px 20px;
+  padding: 26px 24px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
@@ -2306,9 +2344,10 @@ li {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .kabinet-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap:20px;
   }
 }
 
