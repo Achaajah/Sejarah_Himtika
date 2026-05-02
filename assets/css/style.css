@@ -308,9 +308,9 @@ li {
 .live-news .rectangle .selaras {
     position: relative;
     z-index: 2;
-    width: 45px;
-    height: 45px;
-    margin: 10px 50px 0 0;
+    width: 40px;
+    height: auto;
+    margin: 10px 50px 10px 0;
 }
 
 .live-news .marquee {
@@ -331,7 +331,8 @@ li {
     align-content: center;
     line-height: 45px;
     font-size: 16px;
-    font-family: "Inter", sans-serif;
+    font-family: "Figtree";
+	text-shadow: 2px 2px 2px #000040;
 }
 
 .live-news .marquee span a {
@@ -2562,11 +2563,11 @@ li {
   height: auto;
 
   display: block;
-<<<<<<< HEAD
+
   margin: 0 auto; /*  fix biar center */
-=======
+
   margin: 0 auto; /* 🔥 fix biar center */
->>>>>>> 8591dad (animasi)
+
 
   opacity: 0;
   transform: translateY(40px) scale(0.9);
@@ -2637,6 +2638,8 @@ li {
     transform: translateY(0) scale(1);
   }
 }
+
+
 /* BAGIAN 12 */
 .filosofi-section {
   position: relative;
