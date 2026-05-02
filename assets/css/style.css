@@ -2454,12 +2454,17 @@ li {
 }
 
 .logo-kabinet img {
-  transform: translateX(40px); /* geser dikit ke kanan */
-
-  width: 280px;
+  width: 250px;
   max-width: 80%;
   height: auto;
+
   display: block;
+  margin: 0 auto; /*  fix biar center */
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: fadeUpScale 0.8s ease forwards;
+  animation-delay: 1s;
 }
 
 /* DESKRIPSI */
