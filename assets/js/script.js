@@ -54,6 +54,9 @@
 		const mobileMenuContent = $('.main-header .nav-outer .main-menu').html();
 		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
 
+		// Tambahkan tombol panah (dropdown-btn) ke setiap item yang punya submenu
+		$('.mobile-menu li.dropdown').append('<div class="dropdown-btn"><span class="fas fa-chevron-down"></span></div>');
+
 		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
 			$(this).toggleClass('open');
 			$(this).prev('ul').slideToggle(300);
