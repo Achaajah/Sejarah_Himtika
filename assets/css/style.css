@@ -2166,6 +2166,7 @@ ul,li{
   display: inline-block;
   margin: 20px auto 0 auto;
   text-align: center;
+  font-weight: bold;
 }
 
 /* bintang kiri (dekat "Perjalanan") */
@@ -2943,6 +2944,7 @@ ul,li{
   font-family: "Montserrat", sans-serif;
   font-size: 52px;
   line-height: 1.2;
+  font-weight: bold;
   margin-bottom: 20px;
 
   background: linear-gradient(90deg, #ffb8cf 0%, #ffed9e 100%);
