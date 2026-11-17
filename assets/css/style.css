@@ -2618,7 +2618,23 @@ li {
 .sinergis-logo {
   transform: scale(1.5);
 }
+/* ===== CARD KABINET: KLIK FULL ===== */
+.kabinet-card::before,
+.kabinet-card::after {
+  pointer-events: none;
+}
 
+.kabinet-card {
+  cursor: pointer;
+}
+
+.kabinet-card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: 20px;
+}
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .kabinet-grid {
@@ -3146,3 +3162,160 @@ li {
     width: 20px;
   }
 }
+/* =============== back to top button ================ */
+.back-to-top {
+    position: fixed !important;
+    bottom: 93px;  /* 32px (bawah Btn) + 45px (tinggi Btn) + 16px (jarak) */
+    right: 34px;   /* supaya tengahnya sejajar dengan tombol HIMTIKA */
+    z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+}
+
+/* State pas dimunculin via JS */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Sisanya pake kodingan Uiverse lo --- */
+.button {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #D6C26A;
+    border: 2px solid #F0EDDB;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+.button::after {
+    content: "Top";
+    position: absolute;
+    width: auto;
+    background-color: white;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 25px;
+    top: -50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    transform: scale(0);
+}
+.svg {
+	transition: all 0.5s;
+}
+.button:hover {
+	transform: translateY(-3px);
+	background-color: #94812d;
+}
+.button:hover .svg {
+	fill: white;
+	transform: scale(1.2);
+}
+.button:hover::after {
+	transform: scale(1);
+}
+.button:active {
+	transform: translateY(2px);
+}
+/* =============== back to top button ================ */
+
+/* Button BackToHIMTIKA */
+.Btn-parent {
+  position: fixed;
+  bottom: 32px;
+  right: 36px;
+  z-index: 10;
+}
+
+.Btn-parent a {
+  text-decoration: none !important;
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 255, 255);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* text */
+.Btn .text-button {
+  width: 0%;
+  opacity: 0;
+  color: rgba(255, 255, 255);
+  background-color: rgba(10, 198, 194);
+  transition-duration: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.Btn .text-button h1 {
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 0.75rem;
+}
+.Btn .text-button h1 span {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 0px -2px 0px rgba(11, 223, 219);
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 160px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+  box-shadow: 0px 0px 15px 1px rgba(11, 223, 219);
+}
+
+.Btn:hover .sign {
+  width: 35%;
+  transition-duration: 0.3s;
+  padding-left: 5px;
+}
+/* hover effect button's text */
+.Btn:hover .text-button {
+  opacity: 1;
+  width: 65%;
+  transition-duration: 0.3s;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+/* Sembunyikan tombol melayang selama preloader (tanpa delay saat muncul) */
+body:not(.page-loaded) .Btn-parent,
+body:not(.page-loaded) .back-to-top {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}
+/* Button BackToHIMTIKA */

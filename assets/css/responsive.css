@@ -283,6 +283,7 @@
 	.header-top .live-news{
 		position: auto;	
 	}
+
 }
 
 @media only screen and (max-width: 599px){
@@ -294,4 +295,17 @@
 		width:100%;
 		text-align:center	
 	}
+}
+@media (max-width: 768px){
+    /* Button BackToHIMTIKA */
+    .Btn-parent {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Button Back To Top: tengahnya sejajar dengan tombol Home */
+    .back-to-top {
+        bottom: 81px;
+        right: 17.5px;
+    }
 }

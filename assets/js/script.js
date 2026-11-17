@@ -235,4 +235,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		kabinetObserver.observe(kabinetSection);
 	}
 
+// ================= BACK TO TOP =================
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+	window.addEventListener("scroll", () => {
+		backToTop.classList.toggle("show", window.scrollY > 400);
+	});
+
+	backToTop.addEventListener("click", () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+}
 });
