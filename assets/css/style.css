@@ -2105,6 +2105,22 @@ li {
   background: linear-gradient(to right, #f3cfc2, #e7bfa5);
 }
 
+/* ================= PETUNJUK GESER (hilang di desktop) ================= */
+
+.timeline-hint {
+  display: none;
+}
+
+@keyframes hintNudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
 /* ================= CONTENT ================= */
 
 .timeline-wrapper {
@@ -2119,7 +2135,7 @@ li {
   width: 100%;
   max-width: 850px;
   padding: 40px 0;
-  text-align: left; /* 🔥 FIX */
+  text-align: left;
 }
 
 /* ================= SLIDE ================= */
@@ -2127,7 +2143,7 @@ li {
 .slide {
   display: none;
   position: relative;
-  text-align: left; /* 🔥 FIX */
+  text-align: left;
   min-height: 320px;
   animation: fade 0.5s ease;
 }
@@ -2135,7 +2151,7 @@ li {
 .slide.active {
   display: block;
 }
-/*animasi*/
+
 /* ================= SCROLL REVEAL ================= */
 .reveal {
   opacity: 0;
@@ -2159,6 +2175,7 @@ li {
 .reveal:nth-child(4) {
   transition-delay: 0.4s;
 }
+
 /* STATE AWAL */
 .slide {
   opacity: 0;
@@ -2171,11 +2188,12 @@ li {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* header */
 .slide-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 🔥 FIX */
+  justify-content: flex-start;
   font-weight: bold;
   gap: 16px;
   margin-bottom: 20px;
@@ -2194,7 +2212,7 @@ li {
   line-height: 1.2;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  text-align: left; /* 🔥 FIX */
+  text-align: left;
 
   background: linear-gradient(90deg, #ffb8cf 0%, #ffed9e 100%);
   -webkit-background-clip: text;
@@ -2205,11 +2223,11 @@ li {
 .slide p {
   max-width: 650px;
   font-family: "Inter", sans-serif;
-  margin: 20px 0 0 0; /* 🔥 FIX (hapus auto) */
+  margin: 20px 0 0 0;
   line-height: 1.8;
   color: #dcdcdc;
   font-size: 16px;
-  text-align: left; /* 🔥 FIX */
+  text-align: left;
 }
 
 /* ================= YEAR BACKGROUND ================= */
@@ -2231,7 +2249,6 @@ li {
   text-align: center;
 }
 
-/* h1 jadi patokan */
 .slide[data-year=""] h1 {
   position: relative;
   display: inline-block;
@@ -2296,7 +2313,7 @@ li {
 @keyframes fade {
   from {
     opacity: 0;
-    transform: translateY(10px); /* 🔥 lebih halus */
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -2339,6 +2356,10 @@ li {
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
+
+    /* efek pudar di ujung kanan */
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
   }
 
   .timeline-nav-wrapper::-webkit-scrollbar {
@@ -2353,22 +2374,47 @@ li {
   .timeline-nav {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
     width: max-content;
-    padding: 10px 10px;
+    padding: 10px 40px 10px 10px;
+    margin-bottom: 40px;
   }
 
   .timeline-item {
     white-space: nowrap;
     flex-shrink: 0;
     font-size: 13px;
-    padding: 6px 14px;
+    padding: 6px 10px;
   }
 
   .line {
-    width: 50px;
+    flex: 0 0 28px;
+    width: 28px;
+    max-width: none;
     height: 2px;
     flex-shrink: 0;
+    margin: 0 2px;
+  }
+
+  /* teks petunjuk geser */
+  .timeline-hint {
+    display: block;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: #f3cfc2;
+    opacity: 0.7;
+    margin: -25px 0 30px 0;
+    animation: hintNudge 1.8s ease-in-out infinite;
+    transition: opacity 0.4s ease;
+  }
+
+  .timeline-hint.hide {
+    opacity: 0;
+    animation: none;
   }
 
   .slide h1 {

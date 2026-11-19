@@ -88,6 +88,17 @@
 
 // ================= GLOBAL DOM READY =================
 document.addEventListener("DOMContentLoaded", function () {
+		// ================= HINT GESER TIMELINE =================
+	const navWrapper = document.querySelector(".timeline-nav-wrapper");
+	const hint = document.querySelector(".timeline-hint");
+
+	if (navWrapper && hint) {
+		navWrapper.addEventListener(
+			"scroll",
+			() => hint.classList.add("hide"),
+			{ once: true }
+		);
+	}
 
 	// ================= HERO =================
 	const hero = document.querySelector(".hero-section");
@@ -247,4 +258,5 @@ if (backToTop) {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 }
+
 });
