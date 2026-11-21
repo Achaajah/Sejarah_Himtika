@@ -559,7 +559,6 @@ li {
   font-size: 15px;
   font-family: "Figtree";
   text-decoration: none;
-  text-transform: capitalize;
   color: #252525;
   text-align: left;
   transition: all 500ms ease;
